@@ -94,7 +94,7 @@ if(st.button("SUBMIT")):
     imgdata = base64.decodebytes(base64_image)
     print(base64_image)
     print(imgdata)
-    filename = 'C:\\Users\\pagal\\PycharmProjects\\TEXT\\utube-vid-text\\AI-Video-Generator-Using-OpenAI-Python-main\\Testing.jpg'
+    filename = 'Clarifai_image.jpg'
     with open(filename, 'wb') as f:
         f.write(base64_image)
 
@@ -102,16 +102,16 @@ if(st.button("SUBMIT")):
     from gtts import gTTS
     para = "A woman slumped over her desk, surrounded by papers and office supplies. Her face is pale and sweaty, and her eyes are closed."
     tts = gTTS(text=para, lang='en', slow=False)
-    tts.save("C:\\Users\\pagal\\PycharmProjects\\TEXT\\utube-vid-text\\AI-Video-Generator-Using-OpenAI-Python-main\\Clarify_audio.mp3")
+    tts.save("Clarifai_audio.mp3")
 
-    audio_clip = AudioFileClip("C:\\Users\\pagal\\PycharmProjects\\TEXT\\utube-vid-text\\AI-Video-Generator-Using-OpenAI-Python-main\\Clarify_audio.mp3")
+    audio_clip = AudioFileClip("Clarify_audio.mp3")
     audio_duration = audio_clip.duration
 
     print("Extract Image Clip and Set Duration...")
-    image_clip = ImageClip('C:\\Users\\pagal\\PycharmProjects\\TEXT\\utube-vid-text\\AI-Video-Generator-Using-OpenAI-Python-main\\Testing.jpg').set_duration(audio_duration)
+    image_clip = ImageClip('Clarifai_image.jpg').set_duration(audio_duration)
 
     clip = image_clip.set_audio(audio_clip)
     video = CompositeVideoClip([clip])
 
-    video = video.write_videofile("C:\\Users\\pagal\\PycharmProjects\\TEXT\\utube-vid-text\\AI-Video-Generator-Using-OpenAI-Python-main\\ClarifyVideo.mp4", fps=24)
-    st.video("C:\\Users\\pagal\\PycharmProjects\\TEXT\\utube-vid-text\\AI-Video-Generator-Using-OpenAI-Python-main\\ClarifyVideo.mp4")
+    video = video.write_videofile("Clarify_video.mp4", fps=24)
+    st.video("Clarify_video.mp4")
