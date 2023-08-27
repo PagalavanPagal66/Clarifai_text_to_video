@@ -10,3 +10,5 @@ streamlit-chat==0.1.1
 streamlit-folium==0.12.0
 streamlit-lottie==0.0.5
 streamlit-option-menu==0.3.6
+clarifai==9.7.5
+clarifai-grpc==9.7.3
