@@ -12,3 +12,4 @@ streamlit-lottie==0.0.5
 streamlit-option-menu==0.3.6
 clarifai==9.7.5
 clarifai-grpc==9.7.3
+moviepy==1.0.3
