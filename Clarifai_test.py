@@ -49,18 +49,24 @@ if(st.button("SUBMIT")):
     
     st.write("Completion:\n")
     st.write(output.data.text.raw)
-    
-splitted_prompts = prompt_text.split('Image Prompt: ')
-print(splitted_prompts)
-image_prompt = []
-narrator_prompt = []
-for iter in splitted_prompts:
-    values = iter.split('Narrator:')
-    image_prompt.append((values[0]).split('.\\n\\n')[0])
-    try:
-        narrator_prompt_text = (values[1]).split('.\\n\\n')
-        narrator_prompt.append(narrator_prompt_text[0])
-    except:
-        pass
+    prompt_text = output.data.text.raw
+    splitted_prompts = prompt_text.split('Image Prompt: ')
+    print(splitted_prompts)
+    image_prompt = []
+    narrator_prompt = []
+    for iter in splitted_prompts:
+        values = iter.split('Narrator:')
+        image_prompt.append((values[0]).split('.\\n\\n')[0])
+        try:
+            narrator_prompt_text = (values[1]).split('.\\n\\n')
+            narrator_prompt.append(narrator_prompt_text[0])
+        except:
+            pass
+    st.title("IMAGES : ")
+    for iter in image_prompt:
+        st.write(iter)
+    st.title("NARRATOR")
+    for iter in narrator_promt:
+        st.write(iter)
 
 
