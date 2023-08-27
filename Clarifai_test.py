@@ -66,7 +66,7 @@ if(st.button("SUBMIT")):
     for iter in image_prompt:
         st.write(iter)
     st.title("NARRATOR")
-    for iter in narrator_promt:
+    for iter in narrator_prompt:
         st.write(iter)
 
 
